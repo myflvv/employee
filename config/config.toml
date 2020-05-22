@@ -2,7 +2,7 @@
 host = "127.0.0.1"
 name = "employee"
 user = "root"
-pass = "123456"
+pass = "1q2w3e"
 port = "3306"
 charset = "utf8"
 table_prefix = "employee_"

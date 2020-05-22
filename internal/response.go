@@ -7,11 +7,13 @@ import (
 
 
 func ResErr(c *gin.Context,httpCode int,code int,msg string,err error)  {
-	c.JSON(httpCode,gin.H{
-		"code" : code,
-		"msg" :msg,
-		"err" : err,
-	})
+	message := make(map[string]interface{})
+	message["code"] = code
+	message["msg"] = msg
+	if err != nil {
+		message["err"] = err.Error()
+	}
+	c.JSON(httpCode,message)
 }
 
 func ResJsonData(c *gin.Context,code int,msg string,data interface{})  {

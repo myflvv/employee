@@ -21,6 +21,7 @@ func SetupRouter() *gin.Engine{
 				"msg":"eee",
 			})
 		})
+		v1.POST("/permission/add", servcie.AddPermission)
 		v1.GET("/mr", func(c *gin.Context) {
 			dao.DB.AutoMigrate(&schema.User{})
 		})
